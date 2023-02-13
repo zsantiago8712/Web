@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Formulario Checkbos, radio y Controles text</h1>
+    <form action="formulario.php" method="POST" enctype="application/x-www-form-urlencoded">
+        <div>
+            <label>Buscar:</label>
+            <input type="text" name="search" placeholder="Busque">
+        </div>
+        
+        <br>
+        <div>
+            <h4>Selecciona tu bebida favorita</h4>
+            <input type="radio" name="bebida" value="coke">Coca Cola
+            <input type="radio" name="bebida" value="pepsi">Pepsi
+            <input type="radio" name="bebida" value="Seven Up">Seven Up
+            <input type="radio" name="bebida" value="none">None
+        </div>
+        <br>
+        <div>
+            <h4>Selecciona tu platfoma favorita</h4>
+            <input type="radio" name="platform" value="android">Android
+            <input type="radio" name="platform" value="ios">Iphone
+            <input type="radio" name="platform" value="none">None
+        </div>    
+        <br>
+        <div>
+            <h4>¿Cuales de estas bebidas has tomado durante el año</h4>
+            <input type="checkbox" name="bebida" value="coke">Coca Cola
+            <input type="checkbox" name="bebida" value="pepsi">Pepsi
+            <input type="checkbox" name="bebida" value="Seven Up">Seven Up
+            <input type="checkbox" name="bebida" value="none">None
+        </div> 
+        <br>
+        <div>
+            <input type="submit" name="enviar" value="Enviar">
+        </div>   
+
+    </form>
+</body>
+</html>
