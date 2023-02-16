@@ -1,7 +1,8 @@
 <?php
     $estados = array("Oxaca", "Chiapas", "Campeche", "Estado de México", "Guanajuato", "Baja California Sur", "Sonora");
-    $capitales = array("Oxaca","Tuxtla Gutiérrez", "San Francisco de Campeche", "Toluca", "Guanajuato", "La Paz", "Hermosillo");
-    $poblacion = array(123421325, 321730, 9361237, 123123, 1232314123);
+    $capitales = array("Oxaca","Tuxtla Gutiérrez", "San Francisco de Campeche",
+                        "Toluca", "Guanajuato", "La Paz", "Hermosillo");
+    $poblacion = array(123421325, 321730, 9361237, 123123, 932740972, 432987432, 98743223);
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +20,7 @@
         <tr>
             <th id="estados">Estado</th>
             <th id="capitales">Capital</th>
-            <th id="poblacion">Población></th>
+            <th id="poblacion">Población</th>
         </tr>
     </thead>
     <tbody>
