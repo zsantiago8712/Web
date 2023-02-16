@@ -42,7 +42,6 @@
             <?php }?>
 
         </select>
-        <div>
     </form>
 </body>
 
