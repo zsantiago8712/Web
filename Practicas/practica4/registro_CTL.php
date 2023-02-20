@@ -2,7 +2,7 @@
 
 
 $file_name = "usuarios.txt";
-$file_handle = fopen($file_name, "a+") or die("Can not open file");
+$file_handle = fopen($file_name, "a+");
 
 $data = implode(",", $_POST);
 fwrite($file_handle, $data);
