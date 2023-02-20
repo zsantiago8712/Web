@@ -7,10 +7,15 @@
     while (!feof($file_handle)) {
         $row = fgets($file_handle);
         $array_tmp = explode(",", $row);
-        array_push($data, array("nombre" => $array_tmp[0], "apellido" => $array_tmp[1], "correo" => $array_tmp[2]));
+        $link = http_build_query(array('user' =>
+            array("nombre" => $array_tmp[0], "apellido" => $array_tmp[1], "correo" => $array_tmp[2])));
+
+        array_push($data, array("nombre" => $array_tmp[0], "apellido" => $array_tmp[1],
+            "correo" => $array_tmp[2], "link" => $link));
     }
 
     fclose($file_handle);
+
 ?>
 
 
@@ -72,7 +77,7 @@
                 <th id=<?$user['nombre']?>><?=$user['nombre']?></th>
                 <th id=<?$user['apellido']?>><?=$user['apellido']?></th>
                 <th id=<?$user['correo']?>><?=$user['correo']?></th>
-                <th id="editarUsuario<?=$key?>"> <a href="registro.php?user=<?=$user?>">Editar</th>
+                <th id="editarUsuario<?=$key?>"> <a href=<?=$user['link']?>>Editar</th>
             </tr>
             <?php } ?>
         </tbody>
