@@ -7,7 +7,7 @@
     while (!feof($file_handle)) {
         $row = fgets($file_handle);
         $array_tmp = explode(",", $row);
-        $link = http_build_query(array('user' =>
+        $link = "registro.php?" .http_build_query(array('user' =>
             array("nombre" => $array_tmp[0], "apellido" => $array_tmp[1], "correo" => $array_tmp[2])));
 
         array_push($data, array("nombre" => $array_tmp[0], "apellido" => $array_tmp[1],
