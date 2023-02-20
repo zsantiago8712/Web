@@ -9,4 +9,4 @@ fwrite($file_handle, $data);
 
 fclose($file_handle);
 
-header("Location registro.php");
+header("Location: registro.php");
