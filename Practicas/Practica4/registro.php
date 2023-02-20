@@ -72,7 +72,7 @@
                 <th id=<?$user['nombre']?>><?=$user['nombre']?></th>
                 <th id=<?$user['apellido']?>><?=$user['apellido']?></th>
                 <th id=<?$user['correo']?>><?=$user['correo']?></th>
-                <th id="editarUsuario<?=$key?>"> <a href="registro.php?user=<?=$user?>"> </th>
+                <th id="editarUsuario<?=$key?>"> <a href="registro.php?user=<?=$user?>">Editar</th>
             </tr>
             <?php } ?>
         </tbody>
