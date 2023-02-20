@@ -33,19 +33,20 @@
         </div>
         <br>
         <div>
-            <input type="text" name="nombre" placeholder="Nombre" id="nombre">
+            <input type="text" name="nombre" placeholder="Nombre" id="nombre" value=<?=$_GET['user']['nombre']?>>
 
         </div>
 
         <br>
         <div>
-            <input type="text" name="apellido" placeholder="Apellido" id="apellido">
+            <input type="text" name="apellido" placeholder="Apellido" id="apellido"
+                value=<?=$_GET['user']['apellido']?>>
         </div>
 
 
         <br>
         <div>
-            <input type="text" name="correo" placeholder="Correo" id="correo">
+            <input type="text" name="correo" placeholder="Correo" id="correo" value=<?=$_GET['user']['correo']?>>
         </div>
 
         <div>
@@ -71,6 +72,7 @@
                 <th id=<?$user['nombre']?>><?=$user['nombre']?></th>
                 <th id=<?$user['apellido']?>><?=$user['apellido']?></th>
                 <th id=<?$user['correo']?>><?=$user['correo']?></th>
+                <th id="editarUsuario<?=$key?>"> <a href="registro.php?user=<?=$user?>"> </th>
             </tr>
             <?php } ?>
         </tbody>
