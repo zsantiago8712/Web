@@ -27,7 +27,7 @@
 
 <body>
 
-    <form action="formularioCNT.php" method="POST" enctype="application/x-www-form-urlencoded">
+    <form action="registro_CTL.php" method="POST" enctype="application/x-www-form-urlencoded">
         <div>
             <label>Nombre</label>
         </div>
