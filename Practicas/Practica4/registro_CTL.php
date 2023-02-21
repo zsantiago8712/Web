@@ -1,7 +1,7 @@
 <?php
 
 if (isset($_POST)) {
-    
+    echo "sii";
     if (!key_exists("index", $_POST)) {
         addUser($_POST);
     }else {
@@ -9,7 +9,8 @@ if (isset($_POST)) {
     }
 
 }elseif (isset($_GET)) {
-    removeUser($_GET);
+    echo "noo";
+    removeUser($_GET['index']);
 }
 
 header("Location: registro.php");
@@ -81,7 +82,7 @@ function editUser($editUser)
 
 }
 
-function removeUser($removeUserIndex) 
+function removeUser($removeUserIndex)
 {
 
     $users = getUsersFromFile();
