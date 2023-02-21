@@ -31,6 +31,8 @@
     if (!empty($_GET)) {
         $data_post = $data[(int) $_GET['index']];
         echo $data_post;
+        echo (int) $_GET['index'];
+        echo $data;
     }
 ?>
 
