@@ -70,9 +70,9 @@ function editUser($editUser)
             $data = implode(",", array($editUser['nombre'], $editUser['apellido'], $editUser['correo']));
         }
    
-        // if ($key != count($users)) {
-        //     $data = $data;
-        // }
+        if ($key == count($users)) {
+            $data = "\n" . $data;
+        }
         
         fwrite($file, $data);
     }
