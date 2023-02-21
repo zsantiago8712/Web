@@ -65,8 +65,9 @@ function editUser($editUser)
 
     foreach ($users as $key => $user) {
        
-        
+        echo $user;
         $data = implode(",", array($user['nombre'], $user['apellido'], $user['correo']));
+
         if ($key == $editUser['index']) {
             $data = implode(",", array($editUser['nombre'], $editUser['apellido'], $editUser['correo']));
         }
