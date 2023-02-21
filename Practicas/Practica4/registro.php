@@ -22,7 +22,7 @@
 
 
         array_push($data, array("nombre" => $array_tmp[0], "apellido" => $array_tmp[1],
-            "correo" => $array_tmp[2], "link" => $linkEdit));
+            "correo" => $array_tmp[2], "linkEdit" => $linkEdit, "linkRemove" => $linkRemove));
         
             $index++;
     }
