@@ -53,7 +53,7 @@
         </div>
         <br>
         <div>
-            <input type="text" name="nombre" placeholder="Nombre" id="nombre" value=<?=$data_post['ombre']?>>
+            <input type="text" name="nombre" placeholder="Nombre" id="nombre" value=<?=$data_post['nombre']?>>
 
         </div>
 
