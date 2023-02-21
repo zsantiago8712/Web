@@ -45,9 +45,9 @@ function editUser($editUser)
     foreach ($users as $key => $user) {
        
         
-        $data = implode(",", array($user['nombre'], $user['apellido'], $user['correo']));
+        $data = implode(",", array($user['nombre'], $user['apellido'], $user['correo'] . "\n"));
         if ($key == $editUser['index']) {
-            $data = implode(",", array($editUser['nombre'], $editUser['apellido'], $editUser['correo']));
+            $data = implode(",", array($editUser['nombre'], $editUser['apellido'], $editUser['correo'] . "\n"));
         }
         if (!empty($data)) {
             fwrite($file, $data);
