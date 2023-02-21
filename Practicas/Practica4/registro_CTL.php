@@ -1,4 +1,21 @@
 <?php
+
+if (isset($_POST)) {
+    
+    if (!key_exists("index", $_POST)) {
+        addUser($_POST);
+    }else {
+        editUser($_POST);
+    }
+
+}elseif (isset($_GET)) {
+    removeUser($_GET);
+}
+
+header("Location: registro.php");
+
+
+
 function addUser($user)
 {
     $filName = "usuarios.txt";
@@ -64,12 +81,27 @@ function editUser($editUser)
 
 }
 
+function removeUser($removeUserIndex) 
+{
 
+    $users = getUsersFromFile();
+    $filName = "usuarios.txt";
+    $file = fopen($filName, "w");
 
-if (key_exists("index", $user)) {
-    addUser($_POST);
-}else {
-    editUser($_POST);
+    foreach ($users as $key => $user) {
+       
+        
+        $data = implode(",", array($user['nombre'], $user['apellido'], $user['correo']));
+        if ($key == $removeUserIndex) {
+            continue;
+        }
+   
+        if ($key != count($users) - 1) {
+            $data = $data . "\n";
+        }
+        
+        fwrite($file, $data);
+    }
+    
+    fclose($file);
 }
-
-header("Location: registro.php");

@@ -13,11 +13,16 @@
         }
         $array_tmp = explode(",", $row);
 
-        $link = "registro.php?" .http_build_query(array('user' =>
-            array("nombre" => $array_tmp[0], "apellido" => $array_tmp[1], "correo" => $array_tmp[2])));
+        $linkEdit = "registro.php?" .http_build_query(array('user' =>
+            array("nombre" => $array_tmp[0], "apellido" => $array_tmp[1],
+                "correo" => $array_tmp[2], "index" => $index)));
+
+        $linkRemove = "registro_CTL.php?" .http_build_query(array('user' =>
+            array("nombre" => $array_tmp[0], "apellido" => $array_tmp[1], "correo" => $array_tmp[2], "index" => $key)));
+
 
         array_push($data, array("nombre" => $array_tmp[0], "apellido" => $array_tmp[1],
-            "correo" => $array_tmp[2], "link" => $link, "index" => $index));
+            "correo" => $array_tmp[2], "link" => $linkEdit));
         
             $index++;
     }
@@ -86,8 +91,8 @@
                 <th id=<?$user['nombre']?>><?=$user['nombre']?></th>
                 <th id=<?$user['apellido']?>><?=$user['apellido']?></th>
                 <th id=<?$user['correo']?>><?=$user['correo']?></th>
-                <th id="editarUsuario<?=$key?>"> <a href=<?=$user['link']?>>Editar</th>
-                <th id="editarUsuario<?=$key?>"> <a href=<?=$user['link']?>>Eliminar</th>
+                <th id="editarUsuario<?=$key?>"> <a href=<?=$user['linkEdit']?>>Editar</th>
+                <th id="editarUsuario<?=$key?>"> <a href=<?=$user['linkRemove']?>>Eliminar</th>
             </tr>
             <?php } ?>
         </tbody>
