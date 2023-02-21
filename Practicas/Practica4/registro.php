@@ -30,6 +30,7 @@
 
     if (!empty($_GET)) {
         $data_post = $data[(int) $_GET['index']];
+        $data_post['index'] = $_GET['index'];
         $data_post['edit'] = true;
     }
 ?>
