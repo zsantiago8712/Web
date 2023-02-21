@@ -2,8 +2,10 @@
 
 if (!empty($_POST)) {
     if (!$_POST['edit']) {
+        echo "add"
         addUser($_POST);
     }else {
+        echo "edit"
         editUser($_POST);
     }
 
@@ -11,7 +13,7 @@ if (!empty($_POST)) {
     removeUser($_GET['index']);
 }
 
-header("Location: registro.php");
+// header("Location: registro.php");
 
 
 
