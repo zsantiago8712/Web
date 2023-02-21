@@ -65,7 +65,7 @@ function editUser($editUser)
 
     foreach ($users as $key => $user) {
        
-        echo $user;
+        echo var_dump($user);
         $data = implode(",", array($user['nombre'], $user['apellido'], $user['correo']));
 
         if ($key == $editUser['index']) {
