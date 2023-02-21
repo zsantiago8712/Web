@@ -3,15 +3,24 @@
     $file_name = "usuarios.txt";
     $file_handle = fopen($file_name, "r") or die("Can not open file");
     $data = array();
+    $index = 0;
 
     while (!feof($file_handle)) {
         $row = fgets($file_handle);
+
+        echo $row;
+        if ($row == "") {
+            continue;
+        }
         $array_tmp = explode(",", $row);
+
         $link = "registro.php?" .http_build_query(array('user' =>
             array("nombre" => $array_tmp[0], "apellido" => $array_tmp[1], "correo" => $array_tmp[2])));
 
         array_push($data, array("nombre" => $array_tmp[0], "apellido" => $array_tmp[1],
-            "correo" => $array_tmp[2], "link" => $link));
+            "correo" => $array_tmp[2], "link" => $link, "index" => $index));
+        
+            $index++;
     }
 
     fclose($file_handle);
