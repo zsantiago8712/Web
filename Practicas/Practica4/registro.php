@@ -21,7 +21,7 @@
         $link= "registro.php?" .http_build_query(array('index' => $index));
 
         array_push($data, array("nombre" => $array_tmp[0], "apellido" => $array_tmp[1],
-            "correo" => $array_tmp[2], "link" => $link));
+            "correo" => $array_tmp[2], "link" => $link, "index" => $index,'edit' => false));
         
             $index++;
     }
@@ -30,6 +30,7 @@
 
     if (!empty($_GET)) {
         $data_post = $data[(int) $_GET['index']];
+        $data_post['edit'] = true;
     }
 ?>
 
@@ -54,7 +55,6 @@
         <br>
         <div>
             <input type="text" name="nombre" placeholder="Nombre" id="nombre" value=<?=$data_post['nombre']?>>
-
         </div>
 
         <br>
@@ -71,7 +71,7 @@
         <div>
             <input type="submit" name="enviar" id="enviar" value="Enviar">
         </div>
-
+        <input type="hidden" name="edit" id="edit" value=<?=$data_post['edit']?>>
     </form>
     <br>
 

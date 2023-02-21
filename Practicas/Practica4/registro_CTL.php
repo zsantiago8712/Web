@@ -1,7 +1,7 @@
 <?php
 
 if (!empty($_POST)) {
-    if (!key_exists("index", $_POST)) {
+    if (!$_POST['edit']) {
         addUser($_POST);
     }else {
         editUser($_POST);
