@@ -8,7 +8,6 @@
     while (!feof($file_handle)) {
         $row = fgets($file_handle);
 
-        echo $row;
         if ($row == "") {
             continue;
         }

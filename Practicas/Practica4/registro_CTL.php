@@ -36,17 +36,19 @@ function editUser($editUser)
 
     $users = getUsersFromFile();
     $filName = "usuarios.txt";
-    $file = fopen($filName, "a+");
+    $file = fopen($filName, "w");
 
     foreach ($users as $key => $user) {
         
+        $data = implode(",", array($user['nombre'], $user['apellido'], $user['correo'])) . "\n";
         if ($key == $editUser['index']) {
-            addUser($editUser);
-        }else {
-            addUser($user);
+            $data = implode(",", array($editUser['nombre'], $editUser['apellido'], $editUser['correo'])) . "\n";
         }
+
+        fwrite($file, $data);
     }
     
+    fclose($file);
 
 }
 
