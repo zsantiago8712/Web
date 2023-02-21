@@ -12,7 +12,7 @@ if (!empty($_POST)) {
     removeUser($_GET['index']);
 }
 
-// header("Location: registro.php");
+header("Location: registro.php");
 
 
 
@@ -63,19 +63,16 @@ function editUser($editUser)
     $file = fopen($filName, "w");
 
     foreach ($users as $key => $user) {
-       
-        // echo var_dump($user);
-        // echo "\n";
-        
+               
         $data = implode(",", array($user['nombre'], $user['apellido'], $user['correo']));
 
         if ($key == $editUser['index']) {
             $data = implode(",", array($editUser['nombre'], $editUser['apellido'], $editUser['correo']));
         }
    
-        if ($key != count($users)) {
-            $data = $data . "\n";
-        }
+        // if ($key != count($users)) {
+        //     $data = $data;
+        // }
         
         fwrite($file, $data);
     }
