@@ -19,10 +19,13 @@ function getUsersFromFile()
 
     while (!feof($file)) {
         $row = fgets($file);
+
+        $row = str_replace("\r\n", "", $row);
         if ($row == "") {
             continue;
         }
 
+        
         $arrayTmp = explode(",", $row);
         
         array_push($data, array("nombre" => $arrayTmp[0], "apellido" => $arrayTmp[1],
@@ -45,14 +48,12 @@ function editUser($editUser)
     foreach ($users as $key => $user) {
        
         
-        $data = implode(",", array($user['nombre'], $user['apellido'], $user['correo'] . "\n"));
+        $data = implode(",", array($user['nombre'], $user['apellido'], $user['correo']));
         if ($key == $editUser['index']) {
-            $data = implode(",", array($editUser['nombre'], $editUser['apellido'], $editUser['correo'] . "\n"));
+            $data = implode(",", array($editUser['nombre'], $editUser['apellido'], $editUser['correo']));
         }
-        if (!empty($data)) {
-            fwrite($file, $data);
-        }
-       
+   
+        fwrite($file, $data);
     }
     
     fclose($file);
