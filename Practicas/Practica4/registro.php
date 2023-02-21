@@ -67,7 +67,7 @@
                 <th id="nombre_t">Nombre</th>
                 <th id="apellido_t">Apellido</th>
                 <th id="correo_t">Correo</th>
-                <th id="acciones colspan">Acciones></th>
+                <th id="acciones" colspan="2">Acciones</th>
             </tr>
         </thead>
         <tbody>
