@@ -53,6 +53,10 @@ function editUser($editUser)
             $data = implode(",", array($editUser['nombre'], $editUser['apellido'], $editUser['correo']));
         }
    
+        if ($key != count($users) - 1) {
+            $data = $data . "\n";
+        }
+        
         fwrite($file, $data);
     }
     
