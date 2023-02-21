@@ -20,9 +20,9 @@
         $array_tmp = explode(",", $row);
 
         $link= "registro.php?" .http_build_query(array('index' => $index));
-
+        $linkRemove = "registro_CTL.php?" .http_build_query(array('index' => $index));
         array_push($data, array("nombre" => $array_tmp[0], "apellido" => $array_tmp[1],
-            "correo" => $array_tmp[2], "link" => $link, "index" => $index,'edit' => false));
+            "correo" => $array_tmp[2], "link" => $link, "linkRemove" => $linkRemove,"index" => $index,'edit' => false));
         
             $index++;
     }
@@ -96,7 +96,7 @@
                 <th id=<?$user['apellido']?>><?=$user['apellido']?></th>
                 <th id=<?$user['correo']?>><?=$user['correo']?></th>
                 <th id="editarUsuario<?=$key?>"> <a href=<?=$user['link']?>>Editar</th>
-                <th id="editarUsuario<?=$key?>"> <a href=<?=$user['link']?>>Eliminar</th>
+                <th id="editarUsuario<?=$key?>"> <a href=<?=$user['linkRemove']?>>Eliminar</th>
             </tr>
             <?php } ?>
         </tbody>
