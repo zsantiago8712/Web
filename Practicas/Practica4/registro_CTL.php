@@ -19,6 +19,10 @@ function getUsersFromFile()
 
     while (!feof($file)) {
         $row = fgets($file);
+        if ($row == "") {
+            continue;
+        }
+
         $arrayTmp = explode(",", $row);
         
         array_push($data, array("nombre" => $arrayTmp[0], "apellido" => $arrayTmp[1],
