@@ -49,8 +49,10 @@ function editUser($editUser)
         if ($key == $editUser['index']) {
             $data = implode(",", array($editUser['nombre'], $editUser['apellido'], $editUser['correo']));
         }
-
-        fwrite($file, $data);
+        if (!empty($data)) {
+            fwrite($file, $data);
+        }
+       
     }
     
     fclose($file);
