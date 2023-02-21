@@ -43,10 +43,11 @@ function editUser($editUser)
     $file = fopen($filName, "w");
 
     foreach ($users as $key => $user) {
+       
         
-        $data = implode(",", array($user['nombre'], $user['apellido'], $user['correo'])) . "\n";
+        $data = implode(",", array($user['nombre'], $user['apellido'], $user['correo']));
         if ($key == $editUser['index']) {
-            $data = implode(",", array($editUser['nombre'], $editUser['apellido'], $editUser['correo'])) . "\n";
+            $data = implode(",", array($editUser['nombre'], $editUser['apellido'], $editUser['correo']));
         }
 
         fwrite($file, $data);
