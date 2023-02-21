@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_POST)) {
+if (!empty($_POST)) {
     echo "sii";
     if (!key_exists("index", $_POST)) {
         addUser($_POST);
