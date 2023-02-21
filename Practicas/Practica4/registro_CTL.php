@@ -4,6 +4,7 @@ if (!empty($_POST)) {
     if (!$_POST['edit']) {
         addUser($_POST);
     }else {
+        echo var_dump($_POST);
         editUser($_POST);
     }
 
@@ -63,8 +64,8 @@ function editUser($editUser)
 
     foreach ($users as $key => $user) {
        
-        echo var_dump($user);
-        echo "\n";
+        // echo var_dump($user);
+        // echo "\n";
         
         $data = implode(",", array($user['nombre'], $user['apellido'], $user['correo']));
 
