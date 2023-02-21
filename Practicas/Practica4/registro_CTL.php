@@ -2,10 +2,10 @@
 
 if (!empty($_POST)) {
     if (!$_POST['edit']) {
-        echo "add"
+        echo "add";
         addUser($_POST);
     }else {
-        echo "edit"
+        echo "edit";
         editUser($_POST);
     }
 
