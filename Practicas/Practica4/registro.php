@@ -67,6 +67,7 @@
                 <th id="nombre_t">Nombre</th>
                 <th id="apellido_t">Apellido</th>
                 <th id="correo_t">Correo</th>
+                <th id="acciones colspan">Acciones></th>
             </tr>
         </thead>
         <tbody>
@@ -78,6 +79,7 @@
                 <th id=<?$user['apellido']?>><?=$user['apellido']?></th>
                 <th id=<?$user['correo']?>><?=$user['correo']?></th>
                 <th id="editarUsuario<?=$key?>"> <a href=<?=$user['link']?>>Editar</th>
+                <th id="editarUsuario<?=$key?>"> <a href=<?=$user['link']?>>Eliminar</th>
             </tr>
             <?php } ?>
         </tbody>
