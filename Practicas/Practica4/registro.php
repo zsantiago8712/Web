@@ -12,6 +12,7 @@
     while (!feof($file_handle)) {
         $row = fgets($file_handle);
 
+        $row = str_replace("\r\n", "", $row);
         if ($row == "") {
             continue;
         }
