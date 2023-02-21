@@ -30,9 +30,6 @@
 
     if (!empty($_GET)) {
         $data_post = $data[(int) $_GET['index']];
-        echo $data_post['nombre'];
-        echo (int) $_GET['index'];
-        echo $data;
     }
 ?>
 
@@ -56,20 +53,19 @@
         </div>
         <br>
         <div>
-            <input type="text" name="nombre" placeholder="Nombre" id="nombre" value=<?=$data_post['user']['nombre']?>>
+            <input type="text" name="nombre" placeholder="Nombre" id="nombre" value=<?=$data_post['ombre']?>>
 
         </div>
 
         <br>
         <div>
-            <input type="text" name="apellido" placeholder="Apellido" id="apellido"
-                value=<?=$data_post['user']['apellido']?>>
+            <input type="text" name="apellido" placeholder="Apellido" id="apellido" value=<?=$data_post['apellido']?>>
         </div>
 
 
         <br>
         <div>
-            <input type="text" name="correo" placeholder="Correo" id="correo" value=<?=$data_post['user']['correo']?>>
+            <input type="text" name="correo" placeholder="Correo" id="correo" value=<?=$data_post['correo']?>>
         </div>
 
         <div>
