@@ -21,7 +21,7 @@
         $link= "registro.php?" .http_build_query(array('index' => $index));
 
         array_push($data, array("nombre" => $array_tmp[0], "apellido" => $array_tmp[1],
-            "correo" => $array_tmp[2], "linkEdit" => $link));
+            "correo" => $array_tmp[2], "link" => $link));
         
             $index++;
     }
