@@ -74,6 +74,7 @@
             <input type="submit" name="enviar" id="enviar" value="Enviar">
         </div>
         <input type="hidden" name="edit" id="edit" value=<?=$data_post['edit']?>>
+        <input type="hidden" name="index" id="index" value=<?=$data_post['index']?>>
     </form>
     <br>
 
