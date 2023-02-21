@@ -1,9 +1,13 @@
 <?php
 
+    //INPUT TIPO HIDEN
     $file_name = "usuarios.txt";
     $file_handle = fopen($file_name, "r") or die("Can not open file");
     $data = array();
     $index = 0;
+    $data_post = null;
+
+    
 
     while (!feof($file_handle)) {
         $row = fgets($file_handle);
@@ -11,24 +15,23 @@
         if ($row == "") {
             continue;
         }
+
         $array_tmp = explode(",", $row);
 
-        $linkEdit = "registro.php?" .http_build_query(array('user' =>
-            array("nombre" => $array_tmp[0], "apellido" => $array_tmp[1],
-                "correo" => $array_tmp[2], "index" => $index)));
-
-        $linkRemove = "registro_CTL.php?" .http_build_query(array('user' =>
-            array("nombre" => $array_tmp[0], "apellido" => $array_tmp[1], "correo" => $array_tmp[2], "index" => $key)));
-
+        $link= "registro.php?" .http_build_query(array('index' => $index));
 
         array_push($data, array("nombre" => $array_tmp[0], "apellido" => $array_tmp[1],
-            "correo" => $array_tmp[2], "linkEdit" => $linkEdit, "linkRemove" => $linkRemove));
+            "correo" => $array_tmp[2], "linkEdit" => $link));
         
             $index++;
     }
 
     fclose($file_handle);
 
+    if (!empty($_GET)) {
+        $data_post = $data[(int) $_GET['index']];
+        echo $data_post;
+    }
 ?>
 
 
@@ -51,20 +54,20 @@
         </div>
         <br>
         <div>
-            <input type="text" name="nombre" placeholder="Nombre" id="nombre" value=<?=$_GET['user']['nombre']?>>
+            <input type="text" name="nombre" placeholder="Nombre" id="nombre" value=<?=$data_post['user']['nombre']?>>
 
         </div>
 
         <br>
         <div>
             <input type="text" name="apellido" placeholder="Apellido" id="apellido"
-                value=<?=$_GET['user']['apellido']?>>
+                value=<?=$data_post['user']['apellido']?>>
         </div>
 
 
         <br>
         <div>
-            <input type="text" name="correo" placeholder="Correo" id="correo" value=<?=$_GET['user']['correo']?>>
+            <input type="text" name="correo" placeholder="Correo" id="correo" value=<?=$data_post['user']['correo']?>>
         </div>
 
         <div>
@@ -91,8 +94,8 @@
                 <th id=<?$user['nombre']?>><?=$user['nombre']?></th>
                 <th id=<?$user['apellido']?>><?=$user['apellido']?></th>
                 <th id=<?$user['correo']?>><?=$user['correo']?></th>
-                <th id="editarUsuario<?=$key?>"> <a href=<?=$user['linkEdit']?>>Editar</th>
-                <th id="editarUsuario<?=$key?>"> <a href=<?=$user['linkRemove']?>>Eliminar</th>
+                <th id="editarUsuario<?=$key?>"> <a href=<?=$user['link']?>>Editar</th>
+                <th id="editarUsuario<?=$key?>"> <a href=<?=$user['link']?>>Eliminar</th>
             </tr>
             <?php } ?>
         </tbody>

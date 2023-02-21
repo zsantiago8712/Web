@@ -1,7 +1,6 @@
 <?php
 
 if (!empty($_POST)) {
-    echo "sii";
     if (!key_exists("index", $_POST)) {
         addUser($_POST);
     }else {
@@ -9,7 +8,6 @@ if (!empty($_POST)) {
     }
 
 }elseif (isset($_GET)) {
-    echo "noo";
     removeUser($_GET['index']);
 }
 
