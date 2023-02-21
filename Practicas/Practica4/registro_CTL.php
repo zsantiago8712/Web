@@ -96,10 +96,6 @@ function removeUser($removeUserIndex)
             continue;
         }
    
-        if ($key != count($users) - 1) {
-            $data = $data . "\n";
-        }
-        
         fwrite($file, $data);
     }
     
