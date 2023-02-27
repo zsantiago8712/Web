@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+echo "HolaA";
 if (!empty($_POST)) {
 
     if ($_POST["username"] == "admin" && $_POST["password"] == "Admin") {
@@ -8,5 +9,5 @@ if (!empty($_POST)) {
     }
 
 }
-
+echo "HolaA2";
 header("Location: contenido_secreto.php");
