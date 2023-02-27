@@ -1,6 +1,6 @@
 <?php 
 
-    var_dump($_SESSION);
+    session_start();
     if (isset($_SESSION["user"])) {
         echo "Usuario: " . $_SESSION["user"] . "Validad\n";
     }else {
