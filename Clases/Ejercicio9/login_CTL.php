@@ -13,4 +13,4 @@ if (!empty($_POST)) {
     }
 
 }
-header("Location: contenido_secreto.php");
+// header("Location: contenido_secreto.php");
