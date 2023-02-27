@@ -5,7 +5,7 @@ if (!empty($_POST)) {
 
 
     if ($_POST["username"] != "admin" || $_POST["password"] != "Admin") {
-        echo "Usuario: " . $_POST["username"] . " Invalido\n";
+        header("Location: login.php");
         exit();
     }
     
