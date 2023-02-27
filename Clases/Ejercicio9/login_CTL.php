@@ -10,4 +10,4 @@ if (!empty($_POST)) {
 
 }
 echo "HolaA2";
-header("Location: contenido_secreto.php");
+// header("Location: contenido_secreto.php");

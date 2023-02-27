@@ -4,7 +4,6 @@ if (!empty($_POST)) {
     if (!$_POST['edit']) {
         addUser($_POST);
     }else {
-        echo var_dump($_POST);
         editUser($_POST);
     }
 
