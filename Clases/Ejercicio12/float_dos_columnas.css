@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+}
+
+div {
+    background-color: #00ffff;
+}
+
+
+p {
+    width: 50%;
+    padding: 5px;
+    float: left;
+}
+
+#p1 {
+    background-color: #A52A24;
+}
+
+#p2 {
+    background-color: #DEB887;
+}
+
+
+section {
+    clear: left;;
+}

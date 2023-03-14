@@ -1,0 +1,37 @@
+a:visited, a:link {
+    text-decoration: none;
+    background-color: green;
+    display: block;
+    width: 200px;
+    color: black;
+    text-align: center;
+    margin-bottom: 2px;
+}
+
+a:hover {
+ background-color: red; 
+ color: white;  
+}
+
+header li:nth-child(3) {
+    font-size: 34px;
+}
+
+
+section > div:nth-child(odd) {
+    background-color: aqua;
+}
+
+section > div:hover:nth-child(4)  {
+    background-color: green;
+    cursor: pointer;
+}
+
+.estilo {
+    font-family: arial, Arial, Helvetica, sans-serif;
+    color: #0000ff;
+    font-weight: bold;
+    font-style: italic;
+    text-transform: capitalize;
+    text-align: justify;
+}
