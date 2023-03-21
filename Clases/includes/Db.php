@@ -26,9 +26,9 @@
                 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
                 $this->mysqlCon = new mysqli($this->host, $this->user, $this->password, $this->db, $this->port);
                 $this->mysqlCon->set_charset($this->charset);
-                echo "Coneccion exitosa";
+                echo "Coneccion exitosa\n";
             } catch (Exception $e) {
-                printf("Error: {}", $e->getMessage());
+                printf("Error: {}\n", $e->getMessage());
             }
         }
 
@@ -38,8 +38,8 @@
             try {
                 $result =  $this->mysqlCon->query($command);
                 $rows = $result->fetch_all(MYSQLI_ASSOC);
+                var_dump($rows);
                 echo $rows;
-
             }catch (Exception $e) {
                 printf("Error: {}", $e->getMessage());
             }
