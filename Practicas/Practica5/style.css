@@ -1,0 +1,13 @@
+body > div.container-fluid {
+    min-height: 100vh;
+}
+
+
+#header {
+    height: 25vh;
+}
+
+
+#principal {
+    height: 75vh;
+}
