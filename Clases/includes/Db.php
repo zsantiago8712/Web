@@ -33,15 +33,17 @@
         }
 
 
-        public function query($command)
+        public function query($command): array
         {
+            $rows = array();
             try {
                 $result =  $this->mysqlCon->query($command);
-                $rows = $result->fetch_all(MYSQLI_ASSOC);
-                var_dump($rows);
+                var_dump($result->fetch_all(MYSQLI_ASSOC), $rows);
                 echo $rows;
+                return $rows;
             }catch (Exception $e) {
                 printf("Error: {}", $e->getMessage());
+                return array();
             }
         }
     }
