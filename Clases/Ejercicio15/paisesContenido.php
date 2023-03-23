@@ -30,14 +30,14 @@
             <th>Presidente</th>
         </tr>
 
+        <? foreach ($rows as $row) { ?>
         <tr>
-            <? foreach ($rows as $row) { ?>
             <td><?= $row['Code']?></td>
             <td><?= $row['Name']?></td>
             <td><?= $row['Capital']?></td>
             <td><?= $row['presidente']?></td>
-            <? } ?>
         </tr>
+        <? } ?>
     </table>
 </body>
 
