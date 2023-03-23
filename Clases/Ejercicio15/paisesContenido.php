@@ -5,7 +5,10 @@
     $query = "SELECT Code, Name, Capital, HeadOfState as presidente FROM world.country WHERE continent = ?";
     $db = new Db("localhost", 'dzamora', 'dzamora', '217924', '3306');
     $db->connect();
-    $row = $db->prepare($query, $contiente);
+    $rows = $db->prepare($query, $contiente);
+
+
+
 ?>
 
 <!DOCTYPE html>
