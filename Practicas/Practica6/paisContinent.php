@@ -1,5 +1,8 @@
 <?php
     require_once("../../Clases/includes/Db.php");
+    echo 'SIII';
+    exit();
+
     $db = new Db("localhost", 'dzamora', 'dzamora', '217924', '3306');
 
     $contients =$db->query("SELECT * FROM world.continent");
