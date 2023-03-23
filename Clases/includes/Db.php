@@ -61,9 +61,7 @@
                 $stmt->bind_param('i', $args);
                 $stmt->execute();
                 $result = $stmt->get_result();
-                $rows = array();
-                var_dump($result->fetch_all(MYSQLI_ASSOC), $rows);
-                return $rows;
+                return $result->fetch_all(MYSQLI_ASSOC);
 
             }catch (Exception $e) {
                 printf("Error: {}\n", $e->getMessage());
