@@ -20,13 +20,18 @@
             $this->port = $port;
         }
 
+        public function __destruct()
+        {
+            $this->mysqlCon->close();
+        }
+
         public function connect()
         {
             try {
                 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
                 $this->mysqlCon = new mysqli($this->host, $this->user, $this->password, $this->db, $this->port);
                 $this->mysqlCon->set_charset($this->charset);
-                echo "Coneccion exitosa\n";
+                printf("Coneccion exitosa\n");
             } catch (Exception $e) {
                 printf("Error: {}\n", $e->getMessage());
             }
@@ -39,10 +44,29 @@
             try {
                 $result =  $this->mysqlCon->query($command);
                 var_dump($result->fetch_all(MYSQLI_ASSOC), $rows);
-                echo $rows;
+                printf("{}", $rows);
                 return $rows;
             }catch (Exception $e) {
-                printf("Error: {}", $e->getMessage());
+                printf("Error: {}\n", $e->getMessage());
+                return array();
+            }
+        }
+
+
+        public function prepare($query, $args): array
+        {
+            try {
+
+                $stmt = $this->mysqlCon->prepare($query);
+                $stmt->bind_param('i', $args);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                $rows = array();
+                var_dump($result->fetch_all(MYSQLI_ASSOC), $rows);
+                return $rows;
+
+            }catch (Exception $e) {
+                printf("Error: {}\n", $e->getMessage());
                 return array();
             }
         }
