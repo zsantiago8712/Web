@@ -6,6 +6,7 @@
 
     
     $contients =$db->query("SELECT * FROM world.continent");
+    printf("{}", $contients);
     if (isset($_POST['id_continent'])) {
         $query = "SELECT Code, Name, Capital, HeadOfState as presidente FROM world.country WHERE continent = ?";
         $rows = $db->prepare($query, $_POST['id_continent']);
