@@ -10,6 +10,7 @@
         $query = "SELECT Code, Name, Capital, HeadOfState as presidente FROM world.country WHERE continent = ?";
         $rows = $db->prepare($query, $_POST['id_continent']);
     }
+    $index = 0;
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +36,9 @@
                     <? foreach ($contients as $contient) { ?>
                     <option value="<?= $contient['id_continent'] ?>"> <?= $contient['continent'] ?> </option>
                     <?
-                    printf("{}", $contient);
+
+                    printf("{}.- {}", $index, $contient);
+                    $index++;
                     } ?>
                 </select>
             </div>
