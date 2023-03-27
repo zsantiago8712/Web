@@ -37,7 +37,7 @@
                     <option value="<?= $contient['id_continent'] ?>"> <?= $contient['continent'] ?> </option>
                     <?
 
-                    printf("{}.- {}", $index, $contient);
+                    printf("lol{}.- {}", $index, $contient);
                     $index++;
                     } ?>
                 </select>
