@@ -37,18 +37,7 @@
         }
 
 
-        public function query($command): array
-        {
-            try {
-
-                $result =  $this->mysqlCon->query($command);
-                return $result->fetch_all(MYSQLI_ASSOC);
-
-            }catch (Exception $e) {
-                printf("Error: {}\n", $e->getMessage());
-                return array();
-            }
-        }
+       
 
 
         public function prepare($query, $args): array
@@ -65,5 +54,67 @@
                 printf("Error: {}\n", $e->getMessage());
                 return array();
             }
+        }
+
+
+        
+
+        private function prepareQuery($query): bool|mysqli_stmt
+        {
+            try {
+                return $this->mysqlCon->prepare($query);
+            }catch (Exception $e) {
+                printf("Error: {}\n", $e->getMessage());
+                return false;
+            }
+        }
+
+        private function bindAndExecuteQuery($query, $args, $reuse): array|bool
+        {
+            try {
+                if (!$reuse) {
+                    $stmt = $this->prepareQuery($query);
+                }
+
+                $stmt->bind_param($this->formatBindType($args), ...$args);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                return $result->fetch_all(MYSQLI_ASSOC);
+            }catch (Exception $e) {
+                printf("Error: {}\n", $e->getMessage());
+                return false;
+            }
+        }
+
+        public function query($query, $args = array()): array
+        {
+            try {
+                return $this->bindAndExecuteQuery($query, $args, false);
+            }catch (Exception $e) {
+                printf("Error: {}\n", $e->getMessage());
+                return array();
+            }
+        }
+
+
+        public function insert($query, $data): void
+        {
+            try {
+                foreach ($data as $val => $index) {
+                    if ($index == 0) {
+                        $this->bindAndExecuteQuery($query, $val, false);
+                        continue;
+                    }
+                    $this->bindAndExecuteQuery($query, $val, true);
+                }
+
+            }catch (Exception $e) {
+                printf("Error: {}\n", $e->getMessage());
+            }
+        }
+
+        private function formatBindType($args): string
+        {
+            return str_repeat('s', $args->length);
         }
     }
