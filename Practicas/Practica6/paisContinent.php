@@ -2,9 +2,8 @@
     require_once("../../Clases/includes/Db.php");
     
     $db = new Db("localhost", 'dzamora', 'dzamora', '217924', '3306');
-    echo 'SIII';
     $db->connect();
-    exit();
+
     
     $contients =$db->query("SELECT * FROM world.continent");
     if (isset($_POST['id_continent'])) {
