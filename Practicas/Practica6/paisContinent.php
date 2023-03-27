@@ -4,9 +4,10 @@
     $db = new Db("localhost", 'dzamora', 'dzamora', '217924', '3306');
     $db->connect();
 
-    echo "holaa";
-    $contients =$db->query("SELECT * FROM world.continent");
     
+    $contients =$db->query("SELECT * FROM world.continent");
+    echo "holaa";
+    exit();
     if (isset($_POST['id_continent'])) {
         $query = "SELECT Code, Name, Capital, HeadOfState as presidente FROM world.country WHERE continent = ?";
         $rows = $db->prepare($query, $_POST['id_continent']);
