@@ -39,12 +39,10 @@
 
         public function query($command): array
         {
-            $rows = array();
             try {
 
                 $result =  $this->mysqlCon->query($command);
-                var_dump($result->fetch_all(MYSQLI_ASSOC), $rows);
-                return $rows;
+                return $result->fetch_all(MYSQLI_ASSOC);
 
             }catch (Exception $e) {
                 printf("Error: {}\n", $e->getMessage());
