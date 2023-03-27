@@ -11,7 +11,6 @@
         $query = "SELECT Code, Name, Capital, HeadOfState as presidente FROM world.country WHERE continent = ?";
         $rows = $db->prepare($query, $_POST['id_continent']);
     }
-    $index = 0;
 ?>
 
 <!DOCTYPE html>
@@ -33,14 +32,10 @@
             <div>
                 <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
                     name="id_continent">
-                    <option selected>Open this select menu</option>
+                    <option selected>Select a continent</option>
                     <? foreach ($contients as $contient) { ?>
                     <option value="<?= $contient['id_continent'] ?>"> <?= $contient['continent'] ?> </option>
-                    <?
-
-                    printf("lol{}.- {}", $index, $contient);
-                    $index++;
-                    } ?>
+                    <? }?>
                 </select>
             </div>
             <div>
