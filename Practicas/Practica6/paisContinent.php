@@ -45,6 +45,7 @@
     </div>
     <div class="table-responsive">
         <table class="table caption-top">
+            <caption>Paises de cada contiente</caption>
             <tr>
                 <th scope="col">Código</th>
                 <th scope="col">País</th>
