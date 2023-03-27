@@ -34,7 +34,9 @@
                     <option selected>Open this select menu</option>
                     <? foreach ($contients as $contient) { ?>
                     <option value="<?= $contient['id_continent'] ?>"> <?= $contient['continent'] ?> </option>
-                    <? } ?>
+                    <?
+                    printf("{}", $contient);
+                    } ?>
                 </select>
             </div>
             <div>
