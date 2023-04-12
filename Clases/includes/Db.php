@@ -86,13 +86,13 @@
             }
         }
 
-        public function query($query, $args = array()): array
+        public function query($query, $args = array()): array|bool
         {
             try {
                 return $this->bindAndExecuteQuery($query, $args, false);
             }catch (Exception $e) {
                 printf("Error: {}\n", $e->getMessage());
-                return array();
+                return false;
             }
         }
 
