@@ -7,7 +7,11 @@
     <title>Table - Brand</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Flex&amp;display=swap">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="assets/css/Contact-Form-v2-Modal--Full-with-Google-Map.css">
     <link rel="stylesheet" href="assets/css/Table-With-Search-search-table.css">
     <link rel="stylesheet" href="assets/css/Table-With-Search.css">
 </head>
@@ -21,9 +25,9 @@
                 </a>
                 <hr class="sidebar-divider my-0">
                 <ul class="navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="profile.html"><i class="fas fa-user"></i><span>Profile</span></a><a class="nav-link" href="profile.html"><i class="far fa-map"></i>Projects</a><a class="nav-link" href="profile.html"><i class="far fa-list-alt"></i>Todos</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="table.html"><i class="fas fa-users-cog"></i><span>Admin Users</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-tachometer-alt" style="margin-right: 7.5px;"></i><span>Dashboard</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="profile.html"><i class="fas fa-user" style="width: 15px;margin-right: 7.5px;"></i><span>Profile</span></a><a class="nav-link" href="profile.html"><i class="far fa-map" style="margin-right: 7px;"></i>Projects</a><a class="nav-link" href="profile.html"><i class="far fa-list-alt" style="margin-right: 7.5px;"></i>Task</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="userAdministration.html"><i class="fas fa-users-cog" style="margin-right: 5.2px;"></i><span>Admin Users</span></a></li>
                     <li class="nav-item"></li>
                     <li class="nav-item"></li>
                 </ul>
@@ -117,7 +121,7 @@
                             </li>
                             <div class="d-none d-sm-block topbar-divider"></div>
                             <li class="nav-item dropdown no-arrow">
-                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="d-none d-lg-inline me-2 text-gray-600 small">Valerie Luna</span><img class="border rounded-circle img-profile" src="assets/img/avatars/avatar1.jpeg"></a>
+                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="d-none d-lg-inline me-2 text-gray-600 small">Valerie Luna</span></a>
                                     <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Profile</a><a class="dropdown-item" href="#"><i class="fas fa-cogs fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Settings</a><a class="dropdown-item" href="#"><i class="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Activity log</a>
                                         <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Logout</a>
                                     </div>
@@ -154,7 +158,8 @@
                                             <th>ID</th>
                                             <th>Name</th>
                                             <th>Username</th>
-                                            <th><strong>E-mail</strong></th>
+                                            <th>Email</th>
+                                            <th>Administrator</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
@@ -162,104 +167,12 @@
                                         <tr>
                                             <td>1</td>
                                             <td>1</td>
-                                            <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar1.jpeg">Airi Satou</td>
+                                            <td>Airi Satou</td>
                                             <td>Accountant</td>
                                             <td>Tokyo</td>
+                                            <td>True</td>
                                             <td>
-                                                <div class="btn-group" role="group"><button class="btn btn-primary" type="button" style="background: var(--bs-yellow);"><i class="far fa-edit" style="font-size: 21px;margin-left: 5px;"></i></button><button class="btn btn-primary" type="button" style="background: var(--bs-red);"><i class="far fa-trash-alt" style="font-size: 21px;margin-left: 5px;"></i></button></div>&nbsp;
-                                            </td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>2</td>
-                                            <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar2.jpeg">Angelica Ramos</td>
-                                            <td>Chief Executive Officer(CEO)</td>
-                                            <td>London</td>
-                                            <td>
-                                                <div class="btn-group" role="group"><button class="btn btn-primary" type="button" style="background: var(--bs-yellow);"><i class="far fa-edit" style="font-size: 21px;margin-left: 5px;"></i></button><button class="btn btn-primary" type="button" style="background: var(--bs-red);"><i class="far fa-trash-alt" style="font-size: 21px;margin-left: 5px;"></i></button></div>&nbsp;
-                                            </td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>3</td>
-                                            <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar3.jpeg">Ashton Cox</td>
-                                            <td>Junior Technical Author</td>
-                                            <td>San Francisco</td>
-                                            <td>
-                                                <div class="btn-group" role="group"><button class="btn btn-primary" type="button" style="background: var(--bs-yellow);"><i class="far fa-edit" style="font-size: 21px;margin-left: 5px;"></i></button><button class="btn btn-primary" type="button" style="background: var(--bs-red);"><i class="far fa-trash-alt" style="font-size: 21px;margin-left: 5px;"></i></button></div>&nbsp;
-                                            </td>
-                                            <td>&nbsp;</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>4</td>
-                                            <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar4.jpeg">Bradley Greer</td>
-                                            <td>Software Engineer</td>
-                                            <td>London</td>
-                                            <td>
-                                                <div class="btn-group" role="group"><button class="btn btn-primary" type="button" style="background: var(--bs-yellow);"><i class="far fa-edit" style="font-size: 21px;margin-left: 5px;"></i></button><button class="btn btn-primary" type="button" style="background: var(--bs-red);"><i class="far fa-trash-alt" style="font-size: 21px;margin-left: 5px;"></i></button></div>&nbsp;
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>5</td>
-                                            <td>5</td>
-                                            <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar5.jpeg">Brenden Wagner</td>
-                                            <td>Software Engineer</td>
-                                            <td>San Francisco</td>
-                                            <td>
-                                                <div class="btn-group" role="group"><button class="btn btn-primary" type="button" style="background: var(--bs-yellow);"><i class="far fa-edit" style="font-size: 21px;margin-left: 5px;"></i></button><button class="btn btn-primary" type="button" style="background: var(--bs-red);"><i class="far fa-trash-alt" style="font-size: 21px;margin-left: 5px;"></i></button></div>&nbsp;
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>6</td>
-                                            <td>6</td>
-                                            <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar1.jpeg">Brielle Williamson</td>
-                                            <td>Integration Specialist</td>
-                                            <td>New York</td>
-                                            <td>
-                                                <div class="btn-group" role="group"><button class="btn btn-primary" type="button" style="background: var(--bs-yellow);"><i class="far fa-edit" style="font-size: 21px;margin-left: 5px;"></i></button><button class="btn btn-primary" type="button" style="background: var(--bs-red);"><i class="far fa-trash-alt" style="font-size: 21px;margin-left: 5px;"></i></button></div>&nbsp;
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>7</td>
-                                            <td>7</td>
-                                            <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar2.jpeg">Bruno Nash<br></td>
-                                            <td>Software Engineer</td>
-                                            <td>London</td>
-                                            <td>
-                                                <div class="btn-group" role="group"><button class="btn btn-primary" type="button" style="background: var(--bs-yellow);"><i class="far fa-edit" style="font-size: 21px;margin-left: 5px;"></i></button><button class="btn btn-primary" type="button" style="background: var(--bs-red);"><i class="far fa-trash-alt" style="font-size: 21px;margin-left: 5px;"></i></button></div>&nbsp;
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>8</td>
-                                            <td>8</td>
-                                            <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar3.jpeg">Caesar Vance</td>
-                                            <td>Pre-Sales Support</td>
-                                            <td>New York</td>
-                                            <td>
-                                                <div class="btn-group" role="group"><button class="btn btn-primary" type="button" style="background: var(--bs-yellow);"><i class="far fa-edit" style="font-size: 21px;margin-left: 5px;"></i></button><button class="btn btn-primary" type="button" style="background: var(--bs-red);"><i class="far fa-trash-alt" style="font-size: 21px;margin-left: 5px;"></i></button></div>&nbsp;
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>9</td>
-                                            <td>9</td>
-                                            <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar4.jpeg">Cara Stevens</td>
-                                            <td>Sales Assistant</td>
-                                            <td>New York</td>
-                                            <td>
-                                                <div class="btn-group" role="group"><button class="btn btn-primary" type="button" style="background: var(--bs-yellow);"><i class="far fa-edit" style="font-size: 21px;margin-left: 5px;"></i></button><button class="btn btn-primary" type="button" style="background: var(--bs-red);"><i class="far fa-trash-alt" style="font-size: 21px;margin-left: 5px;"></i></button></div>&nbsp;
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>10</td>
-                                            <td>10</td>
-                                            <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar5.jpeg">Cedric Kelly</td>
-                                            <td>Senior JavaScript Developer</td>
-                                            <td>Edinburgh</td>
-                                            <td>
-                                                <div class="btn-group" role="group"><button class="btn btn-primary" type="button" style="background: var(--bs-yellow);"><i class="far fa-edit" style="font-size: 21px;margin-left: 5px;"></i></button><button class="btn btn-primary" type="button" style="background: var(--bs-red);"><i class="far fa-trash-alt" style="font-size: 21px;margin-left: 5px;"></i></button></div>&nbsp;
+                                                <div class="btn-group" role="group"><button class="btn btn-primary" type="button" style="background: var(--bs-yellow);" data-bs-target="#editUser" data-bs-toggle="modal"><i class="far fa-edit" style="font-size: 21px;margin-left: 5px;"></i></button><button class="btn btn-primary" type="button" style="background: var(--bs-red);"><i class="far fa-trash-alt" style="font-size: 21px;margin-left: 5px;"></i></button></div>&nbsp;
                                             </td>
                                         </tr>
                                     </tbody>
@@ -270,30 +183,10 @@
                                             <td><strong>Name</strong></td>
                                             <td><strong>Username</strong></td>
                                             <td><strong>Email</strong></td>
+                                            <td><strong>Administrator</strong></td>
                                             <td><strong>Actions</strong></td>
                                             <td></td>
                                         </tr>
-                                    </tfoot>
-                                </table>
-                            </div>
-                            <div class="table-responsive table mt-2" id="dataTable-1" role="grid" aria-describedby="dataTable_info">
-                                <table class="table my-0" id="dataTable">
-                                    <thead>
-                                        <tr></tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr></tr>
-                                        <tr></tr>
-                                        <tr></tr>
-                                        <tr></tr>
-                                        <tr></tr>
-                                        <tr></tr>
-                                        <tr></tr>
-                                        <tr></tr>
-                                        <tr></tr>
-                                    </tbody>
-                                    <tfoot>
-                                        <tr></tr>
                                     </tfoot>
                                 </table>
                             </div>
@@ -324,7 +217,42 @@
             </footer>
         </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
     </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="editUser">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" style="font-size: 24px;font-family: Nunito, sans-serif;">User Information</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-start">
+                    <div>
+                        <div class="container-fluid">
+                            <form id="contactForm-1" action="javascript:void(0);" method="get">
+                                <div class="row">
+                                    <div class="col-12 col-md-12 col-xl-12" id="message-1">
+                                        <div class="form-group mb-3"><label class="form-label" for="from-name">Name</label><span class="required-input">*</span>
+                                            <div class="input-group"><span class="input-group-text"><i class="fa fa-user-o"></i></span><input class="form-control" type="text" id="from-name-1" name="name" required="" placeholder="Full Name"></div>
+                                        </div>
+                                        <div class="form-group mb-3"><label class="form-label" for="from-name">Username</label><span class="required-input">*</span>
+                                            <div class="input-group"><span class="input-group-text"><i class="fa fa-user-o"></i></span><input class="form-control" type="text" id="from-name-3" name="username" required="" placeholder="Username"></div>
+                                        </div>
+                                        <div class="form-group mb-3"><label class="form-label" for="from-email">Email</label><span class="required-input">*</span>
+                                            <div class="input-group"><span class="input-group-text"><i class="fa fa-envelope-o"></i></span><input class="form-control" type="text" id="from-email-1" name="email" required="" placeholder="Email Address"></div>
+                                        </div>
+                                        <div class="form-group mb-3"><label class="form-label" for="from-email">Administrator</label><span class="required-input">*</span>
+                                            <div class="input-group"><input type="radio" required="" name="adminstratorCheckBox"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button><button class="btn btn-primary" type="button">Save</button></div>
+            </div>
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/Contact-Form-v2-Modal--Full-with-Google-Map-scripts.js"></script>
     <script src="assets/js/Table-With-Search-search-table.js"></script>
     <script src="assets/js/theme.js"></script>
 </body>
